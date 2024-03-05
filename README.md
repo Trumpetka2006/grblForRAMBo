@@ -1,3 +1,8 @@
+ To Do:
+ --
+ 1) Limit current for stepper drivers with PWM
+ 2) Enable microstepping for Y and Z axys
+ 
  GRBL RAMPS 1.4 port  
  By ArSi arsi@arsi.sk  
  
