@@ -86,6 +86,7 @@ extern "C" {
 
 
         SET_OUTPUT(X_CURRENT);
+        
         SET_OUTPUT(Y_CURRENT);
         SET_OUTPUT(Z_CURRENT);
 
