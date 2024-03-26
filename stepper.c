@@ -508,6 +508,14 @@ void stepper_init() {
     DDRL = DDRL | (1<<DDL3); //PL3 Output
     DDRL = DDRL | (1<<DDL4); //PL4 Output
 
+  //Prescaler (CPU_freq / presclaler)
+  // 0x01   1     16 Mhz
+  // 0x02   8     2 MHz
+  // 0x03   64    250 kHz
+  // 0x04   256   62.5 kHz
+  // 0x05   1024  15 kHz
+
+
     TCCR5A = 0x83; // PWM mode Fast, Non Inverting
     TCCR5B = 0x05; // PWM freq prescaler
     TCNT5 = 0; // Count from 0
