@@ -32,6 +32,9 @@
 #include "probe.h"
 #include"ramps.h"
 
+#include <Arduino.h>
+#include <avr/io.h>
+
 
 // Some useful constants.
 #define DT_SEGMENT (1.0/(ACCELERATION_TICKS_PER_SECOND*60.0)) // min/segment 
@@ -501,6 +504,38 @@ void st_reset()
 
 // Initialize and start the stepper motor subsystem
 void stepper_init() {
+
+    DDRL = DDRL | (1<<DDL3); //PL3 Output
+    DDRL = DDRL | (1<<DDL4); //PL4 Output
+
+    TCCR5A = 0x83; // PWM mode Fast, Non Inverting
+    TCCR5B = 0x05; // PWM freq prescaler
+    TCNT5 = 0; // Count from 0
+
+    OCR5A = 225; // X and Y duty
+
+    OCR5B = 225; // Z duty
+
+
+    //pinMode(46, OUTPUT);
+    pinMode(40, OUTPUT);
+    pinMode(41, OUTPUT);
+
+    pinMode(39, OUTPUT);
+    pinMode(A15,OUTPUT);
+
+    pinMode(A14,OUTPUT);
+    pinMode(A13,OUTPUT);
+
+    //digitalWrite(46,1);
+    digitalWrite(40, 1);
+    digitalWrite(41, 1);
+
+    digitalWrite(39, 1);
+    digitalWrite(A15, 1);
+
+    digitalWrite(A14, 1);
+    digitalWrite(A13, 1);
     // Configure step and direction interface pins
     //    disabled ramps
     //  STEP_DDR |= STEP_MASK;

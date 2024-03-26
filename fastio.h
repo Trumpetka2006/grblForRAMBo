@@ -960,9 +960,9 @@ pins
 #define	OC4A				DIO6
 #define	OC4B				DIO7
 #define	OC4C				DIO8
-#define	OC5A				DIO46
-#define	OC5B				DIO45
-#define	OC5C				DIO44
+//#define	OC5A				DIO46
+//#define	OC5B				DIO45
+//#define	OC5C				DIO44
 
 // change for your board
 #define	DEBUG_LED		DIO21

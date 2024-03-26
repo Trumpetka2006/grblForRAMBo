@@ -83,34 +83,10 @@ extern "C" {
         SET_OUTPUT(Y_ENABLE_PIN);
         SET_OUTPUT(Z_ENABLE_PIN);
 
-
-
-        SET_OUTPUT(X_CURRENT);
-        
-        SET_OUTPUT(Y_CURRENT);
-        SET_OUTPUT(Z_CURRENT);
-
-        WRITE(X_CURRENT, 1);
-        WRITE(Y_CURRENT, 1);
-        WRITE(Z_CURRENT, 1);
-
-        SET_OUTPUT(MICROSTEP_X_1);
-        SET_OUTPUT(MICROSTEP_X_2);
-
-        //SET_OUTPUT(MICROSTEP_Y_1);
-        //SET_OUTPUT(MICROSTEP_Y_2);
-
-        //SET_OUTPUT(MICROSTEP_Z_1);
-        //SET_OUTPUT(MICROSTEP_Z_2);
-
-
-        WRITE(MICROSTEP_X_1, 1);
-        WRITE(MICROSTEP_X_2, 1);
-        //WRITE(MICROSTEP_Y_1, 1);
-        //WRITE(MICROSTEP_Y_2, 1);
-        //WRITE(MICROSTEP_Z_1, 1);
-        //WRITE(MICROSTEP_Z_2, 1);
-
+        //***************************************************************************
+        // Current setting and microstepping in 'stepper.c' on line 500 stepper_init()
+        // -Jiri
+        //***************************************************************************
     }
 
 /**
